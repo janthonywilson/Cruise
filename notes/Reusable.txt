@@ -1,0 +1,7 @@
+    pyplot.subplot(1,2,1, aspect='equal'), pyplot.imshow(pyLaneTracker.Img, interpolation=None, cmap='gray'), pyplot.colorbar(), 
+    hist, bins = numpy.histogram(pyLaneTracker.Img[pyLaneTracker.Img > 0].ravel(), bins = 255)
+    pyplot.subplot(1,2,2), pyplot.bar(bins[0:-1:1],hist), pyplot.show()
+	
+	# would do erosion on the thresholded image
+	SE = numpy.ones((3,3),numpy.uint8)
+    erosion = cv2.erode(globalOtsu, SE, iterations = 1)

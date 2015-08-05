@@ -1,0 +1,9 @@
+Improvements:
+1) Optimization, optimazation, and more optimization.  Run times are currently horrid.
+2) gaborFilter method needs to be expanded to more spatial frequencies and opposite phase.  This could also be parallelized.  There is also the option to constrain the orientations to "angles of interest" from the location of the camera.  This would significantly decrease runtime and increase marker classification.
+3) Post process analysis needs more careful attention to slope and location.  Outlier removal should be performed for the non-relevant objects.
+4) Thresholding needs a lot of fine tuning.  No one method seems to work well in all cases.
+5) Better masking for isolation of land areas (road) and removal of saturating sky.
+6) Better marker selection methods.  Perhaps train an SVM.
+7) gaborFilter could be replaced with a logGaborFilter which has better spatial properties.
+8) Adaptive thresholding and median filtering are the primary culprits for long runtimes.
